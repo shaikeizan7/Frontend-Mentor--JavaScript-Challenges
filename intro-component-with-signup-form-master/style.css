@@ -1,0 +1,156 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: hsl(0, 100%, 74%);
+  background-image: url("images/bg-intro-desktop.png");
+  font-family: Poppins;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  /* width: 1300px; */
+  height: 100vh;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading-container {
+  padding: 36px;
+  width: 500px;
+}
+
+.heading {
+  color: #fff;
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.para {
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.4;
+  width: 90%;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 500px;
+}
+
+button {
+  background-color: hsl(248, 32%, 49%);
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 16px 32px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 5px 8px 0 rgba(0, 0, 0, 0.5);
+}
+span {
+  color: hsl(246, 25%, 77%);
+  font-weight: normal;
+}
+
+.form {
+  background-color: #fff;
+  padding: 38px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0px 5px 16px 0 rgba(0, 0, 0, 0.5);
+}
+.inputs {
+  padding: 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  border: 1px solid hsl(246, 25%, 77%);
+}
+
+.inputs::placeholder {
+  color: hsl(246, 25%, 77%);
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0 8px;
+}
+
+.submit-btn {
+  background-color: hsl(154, 59%, 51%);
+  text-transform: uppercase;
+  padding: 16px 24px;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  border-radius: 6px;
+  box-shadow: 0px 5px 8px 0 rgba(0, 0, 0, 0.5);
+}
+
+.form p {
+  font-size: 10px;
+  text-align: center;
+  color: hsl(246, 25%, 77%);
+}
+
+.form span {
+  color: hsl(0, 100%, 74%);
+  font-weight: bold;
+}
+
+.input-divs {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+}
+
+.input-border {
+  border: 2.5px solid hsl(0, 100%, 74%);
+}
+
+.input-place::placeholder {
+  color: transparent;
+}
+
+.inputplace-email::placeholder {
+  color: hsl(0, 100%, 74%);
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 500;
+  color: hsl(0, 100%, 74%);
+  text-align: end;
+  font-style: italic;
+}
+
+.hidden {
+  display: none;
+}
+
+.error-icon {
+  width: 28px;
+  right: 5%;
+  top: 14%;
+  position: absolute;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
