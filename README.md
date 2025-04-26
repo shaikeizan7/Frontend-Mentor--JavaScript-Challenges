@@ -52,13 +52,19 @@ Throughout these challenges, I practiced:
 
 
 🌟 Acknowledgments
+
 Thanks to Frontend Mentor for providing such amazing real-world projects!
 
 Inspired by professional frontend workflows and clean code practices.
 
 📫 Contact
+
 Feel free to reach out if you want to collaborate or discuss frontend projects!
 
 GitHub: shaikeizan7
+
 LinkedIn: https://linkedin.com/in/shaikeizan
+
+
+
 
