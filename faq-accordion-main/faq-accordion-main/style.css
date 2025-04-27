@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* background-image: url(assets/images/background-pattern-desktop.svg); */
+  background: linear-gradient(to bottom, hsl(292, 42%, 14%) 40%, #f7e8fc 40%);
+  height: 100vh;
+  font-family: "Work sans", sans-serif;
+}
+
+.container {
+  background-image: url(assets/images/background-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.card {
+  background-color: white;
+  padding: 2.2rem;
+  border-radius: 20px;
+  width: 550px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: #2c0047;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* .icon {
+  color: #9f4cfa;
+  font-size: 1.5rem;
+} */
+
+.faq-item {
+  border-top: 1px solid #ddd;
+  padding: 1.5rem 0;
+}
+
+.faq-item:first-child {
+  border-top: none;
+}
+
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.question h2 {
+  font-size: 1rem;
+  color: #2c0047;
+}
+/* 
+.toggle {
+  font-size: 1.5rem;
+  color: #9f4cfa;
+} */
+
+.hidden {
+  display: none;
+}
+
+.answer {
+  margin-top: 1rem;
+  color: hsl(292, 16%, 49%);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Only show first answer by default */
+.faq-item:not(.active) .answer {
+  display: none;
+}
+
+/* .faq-item .active .answer {
+  display: block;
+} */
+
+/* Hover effect on questions */
+.question:hover h2 {
+  color: #9f4cfa;
+}
