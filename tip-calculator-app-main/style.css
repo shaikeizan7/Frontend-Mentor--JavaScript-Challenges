@@ -9,6 +9,8 @@
 body {
   background: hsl(185, 41%, 84%);
   display: flex;
+  flex-direction: column;
+  gap: 64px;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -110,11 +112,11 @@ input:focus {
   font-weight: bold;
   margin-top: 0.2rem;
 }
-/* 
+
 .tip-buttons button.active {
   background: hsl(172, 67%, 45%);
   color: hsl(183, 100%, 15%);
-} */
+}
 
 .tip-buttons button:hover {
   background: hsl(172, 67%, 45%);
@@ -134,9 +136,9 @@ input:focus {
   display: none;
 }
 
-/* input.error {
+.red-border {
   border: 2px solid red;
-} */
+}
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -196,4 +198,12 @@ input::-webkit-inner-spin-button {
   .card {
     flex-direction: column;
   }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }
