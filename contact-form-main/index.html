@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+    <title>Frontend Mentor | Contact form</title>
+  </head>
+  <body>
+    <section class="container">
+      <!-- success container-->
+      <div class="success-box hidden">
+        <div class="msg-box">
+          <img src="assets/images/icon-success-check.svg" alt="" />
+          <p>Message Sent!</p>
+        </div>
+        <p>Thanks for completing the form. We'll be in touch soon!</p>
+      </div>
+      <!-- form -->
+      <form action="" class="form">
+        <p class="contact">Contact Us</p>
+        <div class="names-cont">
+          <div class="name-box">
+            <label for="firstname"
+              >First Name <span class="span">*</span></label
+            >
+            <input type="text" class="fname" id="firstname" />
+            <p class="error-msg er-msg-1 hidden">This field is required</p>
+          </div>
+          <div class="name-box">
+            <label for="lastname">Last Name <span class="span">*</span></label>
+            <input type="text" class="lname" id="lastname" />
+            <p class="error-msg er-msg-2 hidden">This field is required</p>
+          </div>
+        </div>
+
+        <div class="email-box">
+          <label for="email">Email Address <span class="span">*</span></label>
+          <input type="email" id="eamil" class="email" />
+          <p class="error-msg er-msg-3 hidden">
+            Please enter a valid email address
+          </p>
+        </div>
+
+        <div class="query-box">
+          <label class="radio-box"
+            >Query Type <span class="span">*</span></label
+          >
+          <div class="query-inner-box">
+            <div class="queries">
+              <input
+                type="radio"
+                name="option"
+                value="General Enquiry "
+                class="query-focus query-1"
+              />
+              <span class="custom-text">General Enquiry</span>
+            </div>
+            <div class="queries">
+              <input
+                type="radio"
+                name="option"
+                value="Support Request"
+                class="query-focus query-2"
+              />
+              <span class="custom-text">Support Request</span>
+            </div>
+          </div>
+          <p class="error-msg er-msg-4 hidden">Please select a query type</p>
+        </div>
+
+        <div class="texteria-box">
+          <label for="textarea">Message <span class="span">*</span></label>
+          <textarea
+            name=""
+            id="textarea"
+            class="texteria-box textmsg"
+          ></textarea>
+          <p class="error-msg er-msg-5 hidden">This field is required</p>
+        </div>
+
+        <div class="last-box">
+          <input type="checkbox" class="consent" />
+          <p class="consent">
+            I consent to being contacted by the team
+            <span class="span">*</span>
+          </p>
+        </div>
+        <p class="consent error-msg er-msg-6 hidden">
+          To submit this form, please consent to being contacted
+        </p>
+
+        <button class="submit" type="submit">Submit</button>
+      </form>
+    </section>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Shaik Eizan</a>.
+    </div>
+  </body>
+</html>
