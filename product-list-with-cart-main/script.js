@@ -3,7 +3,7 @@
 //  1. Data Management
 // Maintain a central cart array to track items added to the cart. Each item should have properties like id, name, price, quantity, and image.
 
-const addButtons = document.querySelectorAll(".add-btn");
+// const addButtons = document.querySelectorAll(".add-btn");
 
 let cart = [];
 
@@ -185,21 +185,27 @@ function attachDeleteEventListeners() {
     btn.addEventListener("click", () => {
       const id = btn.getAttribute("data-id");
       cart = cart.filter((item) => item.id !== id);
+      // This keeps only the items not matching the clicked item's ID.
 
-      // Find the product and delete
+      // Find the product and reset its UI
       const productCard = document.querySelector(`.product[data-id="${id}"]`);
 
       if (productCard) {
         // Remove red border from image
         const productImg = productCard.querySelector("img");
         productImg?.classList.remove("border-2", "border-red-500");
-      }
 
-      // Show the "Add to Cart" button again
-      const addBtn = productCard.querySelector(".add-btn");
-      addBtn?.classList.add("hidden");
-      const cartBtn = productCard.querySelector(".cart-btn");
-      cartBtn?.classList.remove("hidden");
+        const itemNo = productCard.querySelector(".item-no");
+        itemNo.textContent = 1;
+        // console.log(itemNo);
+
+        // Show the "Add to Cart" button again
+        const addBtn = productCard.querySelector(".add-btn");
+        addBtn?.classList.add("hidden");
+
+        const cartBtn = productCard.querySelector(".cart-btn");
+        cartBtn?.classList.remove("hidden");
+      }
 
       updateCartDisplay();
     });
