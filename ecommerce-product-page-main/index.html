@@ -56,7 +56,7 @@
           <img
             src="images/icon-cart.svg"
             alt=""
-            class="cursor-pointer invert brightness-200"
+            class="cart-icon cursor-pointer invert brightness-200"
           />
           <p
             class="cart-logo bg-orange-500 h-4 w-6 flex items-center justify-center rounded-full absolute -top-2 left-2.5 hidden"
@@ -79,7 +79,7 @@
     >
       <!-- empty cart -->
       <div
-        class="bg-white h-56 w-80 shadow-lg rounded-md absolute top-24 right-40 hidden"
+        class="empty-cart bg-white h-56 w-80 shadow-lg rounded-md absolute top-24 right-40 hidden"
       >
         <p class="font-bold px-6 py-3">Cart</p>
 
@@ -91,7 +91,7 @@
 
       <!-- fill cart -->
       <div
-        class="bg-white h-56 w-80 shadow-lg rounded-md absolute top-20 right-40 hidden"
+        class="fill-cart bg-white h-56 w-80 shadow-lg rounded-md absolute top-24 right-40 hidden"
       >
         <p class="font-bold px-6 py-3">Cart</p>
         <div class="border opacity-70 max-w-full"></div>
@@ -110,16 +110,20 @@
                 Fall Limited Edition Sneakers
               </p>
               <p class="text-sm font-bold text-gray-500">
-                $125.00 <span>x 3</span>
-                <span class="font-bold text-black">$375.00</span>
+                $125.00 <span>x <span class="quantity-count">0</span></span>
+                <span class="font-bold text-black"
+                  >$<span class="price">375.00</span></span
+                >
               </p>
             </div>
             <div>
-              <img src="images/icon-delete.svg" alt="" />
+              <img src="images/icon-delete.svg" alt="" class="delete-btn" />
             </div>
           </div>
 
-          <button class="bg-orange-500 rounded-lg px-6 py-3 w-full font-bold">
+          <button
+            class="checkout-btn bg-orange-500 rounded-lg px-6 py-3 w-full font-bold hover:bg-orange-600"
+          >
             Checkout
           </button>
         </div>
@@ -127,36 +131,66 @@
 
       <!-- img section -->
       <div class="flex flex-col gap-6">
+        <!-- 1 -->
         <div>
           <img
             src="images/image-product-1.jpg"
             alt=""
-            class="h-96 w-96 rounded-lg shadow-md"
+            class="product-imgs h-96 w-96 rounded-lg shadow-md"
+          />
+          <!-- 2 -->
+          <img
+            src="images/image-product-2.jpg"
+            alt=""
+            class="product-imgs h-96 w-96 rounded-lg shadow-md hidden"
+          />
+          <!-- 3 -->
+          <img
+            src="images/image-product-3.jpg"
+            alt=""
+            class="product-imgs h-96 w-96 rounded-lg shadow-md hidden"
+          />
+          <!-- 4 -->
+          <img
+            src="images/image-product-3.jpg"
+            alt=""
+            class="product-imgs h-96 w-96 rounded-lg shadow-md hidden"
           />
         </div>
+        <!-- thumbnails section -->
         <div class="flex gap-5 w-96">
-          <div class="border-2 border-orange-500 rounded-lg">
+          <!-- 1 -->
+          <div class="imgs-border border-2 border-orange-500 rounded-lg">
             <img
               src="images/image-product-1-thumbnail.jpg"
               alt=""
-              class="h-20 rounded-lg opacity-40 cursor-pointer"
+              class="thumb-images h-20 rounded-lg cursor-pointer hover:opacity-40"
             />
           </div>
-          <img
-            src="images/image-product-2-thumbnail.jpg"
-            alt=""
-            class="h-20 rounded-lg cursor-pointer hover:opacity-40"
-          />
-          <img
-            src="images/image-product-3-thumbnail.jpg"
-            alt=""
-            class="h-20 rounded-lg cursor-pointer hover:opacity-40"
-          />
-          <img
-            src="images/image-product-4-thumbnail.jpg"
-            alt=""
-            class="h-20 rounded-lg cursor-pointer hover:opacity-40"
-          />
+          <!-- 2 -->
+          <div class="imgs-border border-orange-500 rounded-lg">
+            <img
+              src="images/image-product-2-thumbnail.jpg"
+              alt=""
+              class="thumb-images h-20 rounded-lg cursor-pointer hover:opacity-40"
+            />
+          </div>
+          <!-- 3 -->
+          <div class="imgs-border border-orange-500 rounded-lg">
+            <img
+              src="images/image-product-3-thumbnail.jpg"
+              alt=""
+              class="thumb-images h-20 rounded-lg cursor-pointer hover:opacity-40"
+            />
+          </div>
+          <!-- 4 -->
+          <div class="imgs-border border-orange-500 rounded-lg">
+            <img
+              src="images/image-product-4-thumbnail.jpg"
+              alt=""
+              class="thumb-images h-20 rounded-lg cursor-pointer hover:opacity-40"
+            />
+          </div>
         </div>
       </div>
       <!-- content section -->
