@@ -75,7 +75,7 @@ cartIcon.addEventListener("mouseleave", function () {
 });
 
 cartIcon.addEventListener("click", function () {
-  fillCart.classList.toggle("hidden");
+  if (!count == 0) fillCart.classList.toggle("hidden");
 });
 
 // deleteBtn
@@ -83,6 +83,8 @@ deleteBtn.addEventListener("click", function () {
   fillCart.classList.add("hidden");
   cartLogo.classList.add("hidden");
   itemNo.textContent = `${(count = 0)}`;
+  emptyCart.classList.remove("hidden");
+
   // cartItems.textContent = 0;
   // quantityCount.textContent = 0;
   // price.textContent = 0;
@@ -93,29 +95,103 @@ checkoutBtn.addEventListener("click", () => {
   fillCart.classList.add("hidden");
   cartLogo.classList.add("hidden");
   itemNo.textContent = `${(count = 0)}`;
+  emptyCart.classList.remove("hidden");
 });
 
 // product thumbnails
 const thumbImages = document.querySelectorAll(".thumb-images");
 const imagesBox = document.querySelectorAll(".imgs-border");
+const mainImg = document.getElementById("main-img");
 
-imagesBox.forEach((img) => {
-  img.addEventListener("click", function () {
-    imagesBox.forEach((img) => {
-      img.classList.remove("border-2");
+imagesBox.forEach((imgBox, index) => {
+  imgBox.addEventListener("click", () => {
+    // Remove borders from all image boxes
+    imagesBox.forEach((box) => {
+      box.classList.remove("border-2", "border-orange-500");
     });
-    img.classList.add("border-2");
-    img.classList.add("border-orange-500");
 
-    thumbImages.forEach((imgs) => {
-      imgs.addEventListener("click", () => {
-        thumbImages.forEach((img) => {
-          img.classList.remove("opacity-40");
-        });
-        imgs.classList.add("opacity-40");
-      });
+    // Remove opacity from all thumbnail images
+    thumbImages.forEach((img) => {
+      img.classList.remove("opacity-40");
     });
+
+    // Add border to the clicked box
+    imgBox.classList.add("border-2", "border-orange-500");
+    // Add opacity to the clicked image
+    thumbImages[index].classList.add("opacity-40");
+
+    mainImg.src = lightProductSrcs[index];
   });
 });
 
-// product images
+// lightbox  product thumbnails
+// Selectors
+const lightthumbImages = document.querySelectorAll(".light-thumb-images");
+const lightimagesBox = document.querySelectorAll(".light-imgs-border");
+const productImgs = document.querySelectorAll(".product-imgs");
+const mainImage = document.getElementById("main-image");
+
+const lightBox = document.querySelector(".light-box");
+const closeBtn = document.querySelector(".close-btn");
+const previousBtn = document.querySelector(".previous-btn");
+const nextBtn = document.querySelector(".next-btn");
+
+const lightProductSrcs = [
+  "images/image-product-1.jpg",
+  "images/image-product-2.jpg",
+  "images/image-product-3.jpg",
+  "images/image-product-4.jpg",
+];
+
+let currentIndex = 0;
+
+// Function to update main image and thumbnail styling
+function updateLightbox(index) {
+  currentIndex = index;
+
+  // Update main image
+  mainImage.src = lightProductSrcs[index];
+
+  // Reset all thumbnails
+  lightimagesBox.forEach((box) =>
+    box.classList.remove("border-2", "border-orange-500")
+  );
+  lightthumbImages.forEach((img) => img.classList.remove("opacity-45"));
+
+  // Highlight selected thumbnail
+  lightimagesBox[index].classList.add("border-2", "border-orange-500");
+  lightthumbImages[index].classList.add("opacity-45");
+}
+
+// Add click event to each thumbnail
+lightimagesBox.forEach((imgBox, index) => {
+  imgBox.addEventListener("click", () => {
+    updateLightbox(index);
+  });
+});
+
+// Open lightbox on main product image click
+productImgs.forEach((img, index) => {
+  img.addEventListener("click", () => {
+    updateLightbox(index); // Optional: match clicked image
+    lightBox.classList.remove("hidden");
+  });
+});
+
+// Close lightbox
+closeBtn.addEventListener("click", () => {
+  lightBox.classList.add("hidden");
+});
+
+// Next Button
+nextBtn.addEventListener("click", () => {
+  const newIndex = (currentIndex + 1) % lightProductSrcs.length;
+  updateLightbox(newIndex);
+});
+
+// Previous Button
+previousBtn.addEventListener("click", () => {
+  const newIndex =
+    (currentIndex - 1 + lightProductSrcs.length) % lightProductSrcs.length;
+  updateLightbox(newIndex);
+});
